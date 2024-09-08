@@ -7,10 +7,6 @@ class Product(models.Model):
     name = models.CharField(max_length=100, unique=True, null=False, blank=False)
     description = models.CharField(max_length=200, null=True, blank=True)
     price = models.FloatField()
-    leads = models.ManyToManyField(
-        "Leads",
-        related_name="product_leads",
-    )
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
@@ -33,4 +29,4 @@ class Leads(models.Model):
     created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return f"{self.name} {self.product.name}"
+        return f"{self.name}"

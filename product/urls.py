@@ -34,5 +34,5 @@ urlpatterns = [
     path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("", include(router.urls)),
     path("leads/", LeadAPIView.as_view(), name="lead"),
-    path("report/", LeadsReportAPIView.as_view(), name="report"),
+    path("leads/products-count/", LeadsReportAPIView.as_view(), name="report"),
 ]
